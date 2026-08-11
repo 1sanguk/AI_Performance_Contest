@@ -10,12 +10,12 @@
 test/
 ├── AGENTS.md
 ├── Readme.md
+├── daily/                    # 프로젝트 전체 개발 회고
 ├── result_generator/
 │   ├── README.md            # RAG 결과기 상세 사용·구조 안내
 │   ├── src/                 # 결과기 개발 소스와 실험 기록
 │   ├── result/              # 현재 실행·제출 후보와 최신 공개 답변
 │   ├── resource/            # 약관, 공개 골드, 러너, 실험 결과
-│   ├── daily/               # 결과기 개발 회고
 │   └── 제출용/              # 단계별 제출 보존 파일
 └── eval_generator/
     ├── README.md            # 학생 평가기 상세 사용·구조 안내
@@ -174,7 +174,7 @@ Qwen2.5-7B-Instruct를 NF4 4-bit로 로드해 T4 GPU 메모리에 맞췄습니�
 | `result_generator/resource/gold_questions_public10.json` | 공개 10문항과 정답 근거·키팩트 |
 | `result_generator/resource/answer/` | 각 실험의 공개 답변과 공식 연습 평가 결과 |
 | `result_generator/resource/kakao/` | 출제 기준 약관 원문 참고 폴더 |
-| `result_generator/daily/` | 개발 과정의 일자별 회고 |
+| `daily/` | 결과기·평가기 개발 과정의 일자별 회고 |
 | `eval_generator/resource/` | 평가기 개발용 예시와 참고 자료 |
 
 현재 `result_generator/result/result_generator_10.ipynb`의 1번 셀은 `result_generator/src/source.ipynb`와 동일하므로 **실험 40 상태**입니다. 순수 실험 39 제출본과 혼동하지 않도록 주의합니다.
@@ -281,4 +281,4 @@ Qwen2.5-7B-Instruct를 NF4 4-bit로 로드해 T4 GPU 메모리에 맞췄습니�
 
 자세한 실험 이력과 실패 분석은 [`result_generator/src/version.md`](result_generator/src/version.md)를 참고합니다.
 
-개발 과정의 일자별 회고와 배운 점은 [`result_generator/daily/`](result_generator/daily/) 폴더를 참고합니다.
+개발 과정의 일자별 회고와 배운 점은 [`daily/`](daily/) 폴더를 참고합니다.

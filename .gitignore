@@ -1,1 +1,5 @@
+# 로컬 Codex 작업 지침은 저장소에 포함하지 않습니다.
 AGENTS.md
+
+# macOS Finder 메타데이터는 모든 폴더에서 제외합니다.
+.DS_Store

@@ -33,9 +33,10 @@ result_generator/
 │   ├── gold_questions_public10.json
 │   ├── kakao/                # 기준 약관 4종
 │   └── answer/               # 실험 답변과 practice 결과
-├── daily/                    # 일자별 회고
 └── 제출용/                   # 단계별 제출본 보존
 ```
+
+프로젝트 전체 일자별 회고는 결과기 폴더 밖의 `../daily/`에서 관리합니다.
 
 ## 기준 약관
 
@@ -185,4 +186,4 @@ sequenceDiagram
 - 한 실험에서 가능한 한 핵심 변수 하나를 변경합니다.
 - 사용자에게서 받은 Colab 결과만 공식 측정값으로 기록합니다.
 - 실패와 회귀도 `src/version.md`에 남깁니다.
-- 자세한 대회 규칙은 `resource/info.md`, 일자별 회고는 `daily/`를 참고합니다.
+- 자세한 대회 규칙은 `resource/info.md`, 일자별 회고는 `../daily/`를 참고합니다.

@@ -1,0 +1,246 @@
+{
+  "team": "5",
+  "answers": [
+    {
+      "qid": "P01",
+      "retrieved": [
+        [
+          "카카오계정 약관",
+          10
+        ],
+        [
+          "카카오계정 약관",
+          9
+        ]
+      ],
+      "answer": "사업자/단체 카카오계정은 계정 정보에 등록된 담당자 1인만 이용할 수 있으며, 이를 다른 사람에게 공유하는 것은 금지됩니다. [1]"
+    },
+    {
+      "qid": "P02",
+      "retrieved": [
+        [
+          "카카오계정 약관",
+          8
+        ],
+        [
+          "카카오 통합서비스약관",
+          7
+        ]
+      ],
+      "answer": "2시간 이상 복구가 지연되는 경우 카카오 서비스 공지사항, 카카오 고객센터 공지사항 등에 게시하여 알려 드리겠습니다."
+    },
+    {
+      "qid": "P03",
+      "retrieved": [
+        [
+          "카카오계정 약관",
+          7
+        ],
+        [
+          "카카오계정 약관",
+          4
+        ]
+      ],
+      "answer": "1. 통합로그인\n2. SSO(Single Sign On)\n3. 카카오계정 정보 통합 관리\n4. 사업자/단체 카카오계정\n5. 기타 회사가 제공하는 서비스"
+    },
+    {
+      "qid": "P04",
+      "retrieved": [
+        [
+          "카카오 위치정보 이용약관",
+          6
+        ],
+        [
+          "카카오 통합서비스약관",
+          6
+        ]
+      ],
+      "answer": "회사가 위치기반서비스의 이용을 제한하거나 중지한 때에는 이용자에게 다음을 사전 공지하거나 이용자에게 통지합니다.[1]6조(서비스의 변경・제한・중지)③"
+    },
+    {
+      "qid": "P05",
+      "retrieved": [
+        [
+          "카카오 위치정보 이용약관",
+          10
+        ],
+        [
+          "카카오 위치정보 이용약관",
+          11
+        ]
+      ],
+      "answer": "제공된 조항에서 확인되지 않습니다"
+    },
+    {
+      "qid": "P06",
+      "retrieved": [
+        [
+          "카카오 통합서비스약관",
+          4
+        ],
+        [
+          "카카오 통합서비스약관",
+          1
+        ]
+      ],
+      "answer": "카카오계정이 없는 사람이 통합서비스에 가입하려면 먼저 카카오계정을 만들어야 합니다. 통합서비스 이용계약은 동의, 확인, 승낙의 순서로 체결됩니다."
+    },
+    {
+      "qid": "P07",
+      "retrieved": [
+        [
+          "카카오 통합서비스약관",
+          1
+        ],
+        [
+          "카카오 통합서비스약관",
+          6
+        ]
+      ],
+      "answer": "카카오 통합서비스약관의 '통합서비스'에 포함되지 않는 서비스는 회사가 아닌 카카오 계열사에서 제공하는 서비스입니다. 약관은 예로 ㈜카카오모빌리티가 제공하는 카카오 T 택시 서비스를 들고 있습니다."
+    },
+    {
+      "qid": "P08",
+      "retrieved": [
+        [
+          "카카오 통합서비스약관",
+          3
+        ],
+        [
+          "카카오계정 약관",
+          3
+        ],
+        [
+          "카카오 통합서비스약관",
+          1
+        ],
+        [
+          "카카오 통합서비스약관",
+          4
+        ]
+      ],
+      "answer": "제공된 조항에서 확인되지 않습니다."
+    },
+    {
+      "qid": "P09",
+      "retrieved": [
+        [
+          "카카오계정 약관",
+          4
+        ],
+        [
+          "카카오계정 약관",
+          8
+        ],
+        [
+          "카카오계정 약관",
+          2
+        ],
+        [
+          "카카오 통합서비스약관",
+          2
+        ]
+      ],
+      "answer": "제공된 조항에서 확인되지 않습니다"
+    },
+    {
+      "qid": "P10",
+      "retrieved": [
+        [
+          "카카오 위치정보 이용약관",
+          10
+        ],
+        [
+          "카카오 위치정보 이용약관",
+          2
+        ]
+      ],
+      "answer": "제공된 조항에서 확인되지 않습니다"
+    }
+  ],
+  "meta": {
+    "doc_name_violations": [],
+    "timeout_qids": [],
+    "env_warnings": [],
+    "transport": "http",
+    "performance": {
+      "version": 2,
+      "transport": "http",
+      "requests": 12,
+      "concurrency": 2,
+      "success": 12,
+      "fail": 0,
+      "success_rate": 1.0,
+      "throughput_rps": 763.3789,
+      "wall_s": 0.0157,
+      "p50_latency_s": 0.0023,
+      "p95_latency_s": 0.003,
+      "errors": [],
+      "summary_method": "median",
+      "protocol": {
+        "requests_per_run": 12,
+        "concurrency": 2,
+        "warmup_requests": 2,
+        "repetitions": 3
+      },
+      "samples": [
+        {
+          "repetition": 1,
+          "transport": "http",
+          "requests": 12,
+          "concurrency": 2,
+          "success": 12,
+          "fail": 0,
+          "success_rate": 1.0,
+          "throughput_rps": 682.3972,
+          "wall_s": 0.0176,
+          "p50_latency_s": 0.0023,
+          "p95_latency_s": 0.0042,
+          "errors": []
+        },
+        {
+          "repetition": 2,
+          "transport": "http",
+          "requests": 12,
+          "concurrency": 2,
+          "success": 12,
+          "fail": 0,
+          "success_rate": 1.0,
+          "throughput_rps": 763.3789,
+          "wall_s": 0.0157,
+          "p50_latency_s": 0.0024,
+          "p95_latency_s": 0.0027,
+          "errors": []
+        },
+        {
+          "repetition": 3,
+          "transport": "http",
+          "requests": 12,
+          "concurrency": 2,
+          "success": 12,
+          "fail": 0,
+          "success_rate": 1.0,
+          "throughput_rps": 775.8007,
+          "wall_s": 0.0155,
+          "p50_latency_s": 0.0023,
+          "p95_latency_s": 0.003,
+          "errors": []
+        }
+      ],
+      "warmup": {
+        "repetition": 0,
+        "transport": "http",
+        "requests": 2,
+        "concurrency": 2,
+        "success": 2,
+        "fail": 0,
+        "success_rate": 1.0,
+        "throughput_rps": 382.7424,
+        "wall_s": 0.0052,
+        "p50_latency_s": 0.0025,
+        "p95_latency_s": 0.0025,
+        "errors": []
+      }
+    }
+  }
+}

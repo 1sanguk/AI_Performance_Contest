@@ -1,0 +1,288 @@
+# -*- coding: utf-8 -*-
+# =====================================================================================
+#  [학생용] 공개 10문항 답변 파일 검사기 — 웹 Colab 셀 하나
+# =====================================================================================
+#  목적
+#    공개 10문항 실행 결과를 확인해, 같은 결과기와 공통 실행 코드로 비공개 30문항을
+#    실행할 때 형식·실행 문제로 중단될 가능성을 미리 줄입니다.
+#
+#  사용법
+#    1. 이 셀을 실행합니다.
+#    2. answers_public_<우리팀번호>.json 한 개만 선택합니다.
+#    3. [통과]가 나오면 결과기 코랩 파일과 함께 제출합니다.
+#    4. [확인 필요]가 나오면 안내된 부분을 고친 뒤 공개 10문항부터 다시 실행합니다.
+# =====================================================================================
+
+import json
+import re
+
+
+PUBLIC_QUESTION_COUNT = 10
+PUBLIC_QIDS = tuple("P{:02d}".format(index) for index in range(1, 11))
+TEAM_IDS = tuple(str(index) for index in range(1, 18))
+TEAM_FILENAME_RE = re.compile(r"^answers_public_([1-9]|1[0-7])\.json$")
+OFFICIAL_PROTOCOL = {
+    "requests_per_run": 12,
+    "concurrency": 2,
+    "warmup_requests": 2,
+    "repetitions": 3,
+}
+
+
+def check_identity(payload, filename):
+    problems = []
+    name = filename.rsplit("/", 1)[-1]
+    match = TEAM_FILENAME_RE.fullmatch(name)
+    if not match:
+        problems.append("파일명을 answers_public_<팀번호>.json 형식으로 맞춰 주세요.")
+
+    team = payload.get("team")
+    if not isinstance(team, str) or team not in TEAM_IDS:
+        problems.append("파일 안의 팀번호를 확인할 수 없습니다. 2번 셀을 다시 실행해 주세요.")
+    elif match and team != match.group(1):
+        problems.append("파일명과 파일 안의 팀번호가 다릅니다. 2번 셀의 팀번호를 확인해 주세요.")
+    return problems
+
+
+def check_answers(answers):
+    if not isinstance(answers, list):
+        return ["공개 문항 실행 결과를 읽을 수 없습니다. 2번 셀을 다시 실행해 주세요."]
+
+    problems = []
+    if len(answers) != PUBLIC_QUESTION_COUNT:
+        problems.append(
+            "공개 문항 결과가 {}개입니다. {}개가 모두 생성되어야 합니다.".format(
+                len(answers), PUBLIC_QUESTION_COUNT
+            )
+        )
+
+    seen_qids = set()
+    duplicate_qids = set()
+    found_qids = []
+    for index, item in enumerate(answers, 1):
+        if not isinstance(item, dict):
+            problems.append("{}번째 문항 결과를 읽을 수 없습니다.".format(index))
+            continue
+
+        qid = item.get("qid")
+        if not isinstance(qid, str) or not qid.strip():
+            label = "{}번째 문항".format(index)
+            problems.append("{}의 문항 번호가 없습니다.".format(label))
+        else:
+            qid = qid.strip()
+            label = qid
+            found_qids.append(qid)
+            if qid in seen_qids:
+                duplicate_qids.add(qid)
+            seen_qids.add(qid)
+
+        if item.get("error"):
+            problems.append("{} 실행 중 오류가 발생했습니다: {}".format(label, item["error"]))
+
+        answer = item.get("answer")
+        if not isinstance(answer, str) or not answer.strip():
+            problems.append("{}의 답변이 비어 있습니다.".format(label))
+
+        retrieved = item.get("retrieved")
+        if not isinstance(retrieved, list) or not 1 <= len(retrieved) <= 4:
+            count = len(retrieved) if isinstance(retrieved, list) else "목록 아님"
+            problems.append("{}의 근거 조항은 1~4개여야 합니다(현재 {}).".format(label, count))
+            continue
+
+        for position, pair in enumerate(retrieved, 1):
+            if not isinstance(pair, list) or len(pair) != 2:
+                problems.append(
+                    "{}의 {}번째 근거가 [문서명, 조번호] 형식이 아닙니다.".format(
+                        label, position
+                    )
+                )
+                continue
+            document, article = pair
+            if not isinstance(document, str) or not document.strip():
+                problems.append("{}의 {}번째 근거에 문서명이 없습니다.".format(label, position))
+            valid_article = (
+                isinstance(article, int) and not isinstance(article, bool)
+            ) or (isinstance(article, str) and bool(article.strip()))
+            if not valid_article:
+                problems.append("{}의 {}번째 근거에 조번호가 없습니다.".format(label, position))
+
+    if duplicate_qids:
+        problems.append("같은 문항 번호가 중복되었습니다: {}".format(sorted(duplicate_qids)))
+    missing_qids = sorted(set(PUBLIC_QIDS) - seen_qids)
+    unexpected_qids = sorted(seen_qids - set(PUBLIC_QIDS))
+    if missing_qids:
+        problems.append("공식 공개 문항이 누락됐습니다: {}".format(missing_qids))
+    if unexpected_qids:
+        problems.append("공식 공개 문항이 아닌 번호가 있습니다: {}".format(unexpected_qids))
+    if (
+        not missing_qids
+        and not unexpected_qids
+        and not duplicate_qids
+        and len(found_qids) == len(PUBLIC_QIDS)
+        and tuple(found_qids) != PUBLIC_QIDS
+    ):
+        problems.append("공개 문항 순서는 P01부터 P10까지여야 합니다. 2번 셀을 다시 실행해 주세요.")
+    return problems
+
+
+def _check_request_block(block, *, label, requests, repetition=None):
+    if not isinstance(block, dict):
+        return ["{} 실행 기록이 없습니다. 2번 셀 최신본으로 다시 실행해 주세요.".format(label)]
+
+    expected = {
+        "transport": "http",
+        "requests": requests,
+        "concurrency": OFFICIAL_PROTOCOL["concurrency"],
+        "success": requests,
+        "fail": 0,
+    }
+    if repetition is not None:
+        expected["repetition"] = repetition
+
+    problems = []
+    labels = {
+        "transport": "실행 방식",
+        "requests": "요청 수",
+        "concurrency": "동시 요청 수",
+        "success": "성공 요청 수",
+        "fail": "실패 요청 수",
+        "repetition": "반복 번호",
+    }
+    for key, value in expected.items():
+        if block.get(key) != value:
+            problems.append(
+                "{}의 {}가 공식 조건과 다릅니다(현재 {!r}, 기준 {!r}).".format(
+                    label, labels[key], block.get(key), value
+                )
+            )
+    if block.get("errors") not in ([], None):
+        problems.append("{} 실행 기록에 오류가 남아 있습니다.".format(label))
+    return problems
+
+
+def check_performance(performance):
+    if not isinstance(performance, dict):
+        return ["HTTP 실행 확인 기록이 없습니다. 2번 셀 최신본으로 다시 실행해 주세요."]
+
+    problems = []
+    if performance.get("version") != 2:
+        problems.append("HTTP 실행 확인 기록이 최신 형식이 아닙니다. 2번 셀 최신본을 사용해 주세요.")
+    if performance.get("transport") != "http":
+        problems.append("HTTP 방식으로 실행한 기록이 아닙니다.")
+
+    protocol = performance.get("protocol")
+    if not isinstance(protocol, dict):
+        problems.append("공식 HTTP 실행 조건을 확인할 수 없습니다. 2번 셀 최신본을 사용해 주세요.")
+    else:
+        labels = {
+            "requests_per_run": "HTTP 요청 수",
+            "concurrency": "동시 요청 수",
+            "warmup_requests": "워밍업 요청 수",
+            "repetitions": "반복 측정 횟수",
+        }
+        for key, expected in OFFICIAL_PROTOCOL.items():
+            if protocol.get(key) != expected:
+                problems.append(
+                    "{}가 공식 기준과 다릅니다(현재 {!r}, 기준 {!r}).".format(
+                        labels[key], protocol.get(key), expected
+                    )
+                )
+
+    problems.extend(
+        _check_request_block(
+            performance,
+            label="HTTP 측정 요약",
+            requests=OFFICIAL_PROTOCOL["requests_per_run"],
+        )
+    )
+
+    warmup = performance.get("warmup")
+    problems.extend(
+        _check_request_block(
+            warmup,
+            label="워밍업",
+            requests=OFFICIAL_PROTOCOL["warmup_requests"],
+            repetition=0,
+        )
+    )
+
+    samples = performance.get("samples")
+    repetitions = OFFICIAL_PROTOCOL["repetitions"]
+    if not isinstance(samples, list) or len(samples) != repetitions:
+        count = len(samples) if isinstance(samples, list) else "확인 불가"
+        problems.append("HTTP 반복 측정은 {}회여야 합니다(현재 {}).".format(repetitions, count))
+    else:
+        for repetition, sample in enumerate(samples, 1):
+            problems.extend(
+                _check_request_block(
+                    sample,
+                    label="HTTP {}회차".format(repetition),
+                    requests=OFFICIAL_PROTOCOL["requests_per_run"],
+                    repetition=repetition,
+                )
+            )
+    return problems
+
+
+def check_meta(meta):
+    if not isinstance(meta, dict):
+        return ["공통 실행 코드의 실행 기록이 없습니다. 2번 셀 최신본으로 다시 실행해 주세요."]
+
+    problems = []
+    for key, label in (
+        ("env_warnings", "실행 환경 경고"),
+        ("doc_name_violations", "허용되지 않은 문서명"),
+        ("timeout_qids", "시간 초과 문항"),
+    ):
+        value = meta.get(key)
+        if not isinstance(value, list):
+            problems.append("{} 기록을 확인할 수 없습니다. 2번 셀 최신본을 사용해 주세요.".format(label))
+        elif value:
+            problems.append("{}이 남아 있습니다: {}".format(label, value))
+
+    if meta.get("transport") != "http":
+        problems.append("결과기가 FastAPI HTTP 방식으로 실행되지 않았습니다.")
+    problems.extend(check_performance(meta.get("performance")))
+    return problems
+
+
+def check_public_result(payload, filename):
+    if not isinstance(payload, dict):
+        return ["결과 파일을 읽을 수 없습니다. 2번 셀이 만든 JSON 파일인지 확인해 주세요."]
+
+    problems = []
+    problems.extend(check_identity(payload, filename))
+    problems.extend(check_answers(payload.get("answers")))
+    problems.extend(check_meta(payload.get("meta")))
+    return problems
+
+
+def main():
+    from google.colab import files
+
+    print("answers_public_<우리팀번호>.json 한 개를 선택하세요.")
+    uploaded = files.upload()
+    if len(uploaded) != 1:
+        raise ValueError("검사할 JSON 파일을 한 개만 선택해 주세요.")
+
+    filename, raw = next(iter(uploaded.items()))
+    try:
+        payload = json.loads(raw.decode("utf-8-sig"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("JSON 파일을 읽을 수 없습니다: {}".format(error)) from error
+
+    problems = check_public_result(payload, filename)
+    print("")
+    if problems:
+        print("[확인 필요] {} — {}건".format(filename, len(problems)))
+        for problem in problems:
+            print(" -", problem)
+        print("")
+        print("안내된 부분을 고친 뒤 공개 10문항 실행과 검사를 다시 진행해 주세요.")
+    else:
+        print("[통과] {} — 결과기 코랩 파일과 함께 제출해 주세요.".format(filename))
+    return problems
+
+
+main()
+

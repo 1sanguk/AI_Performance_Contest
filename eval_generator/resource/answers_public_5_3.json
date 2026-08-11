@@ -1,0 +1,206 @@
+{
+  "team": "5",
+  "answers": [
+    {
+      "qid": "P01",
+      "retrieved": [
+        [
+          "카카오계정 약관",
+          10
+        ]
+      ],
+      "answer": "사업자/단체 카카오계정은 계정 정보에 등록된 담당자 1명만 이용할 수 있으며, 이를 다른 사람에게 공유하는 것은 허용되지 않습니다."
+    },
+    {
+      "qid": "P02",
+      "retrieved": [
+        [
+          "카카오 통합 약관",
+          13
+        ],
+        [
+          "카카오계정 약관",
+          8
+        ],
+        [
+          "카카오 통합서비스약관",
+          7
+        ]
+      ],
+      "answer": "복구가 2시간 이상 지연되면 회사는 공지사항에 게시하여 알릴 것입니다."
+    },
+    {
+      "qid": "P03",
+      "retrieved": [
+        [
+          "카카오계정 약관",
+          7
+        ]
+      ],
+      "answer": "카카오계정 서비스는 다음과 같습니다.\n\n1. 통합로그인\n2. SSO(Single Sign On)\n3. 카카오계정 정보 통합 관리\n4. 사업자/단체 카카오계정\n5. 기타 회사가 제공하는 서비스"
+    },
+    {
+      "qid": "P04",
+      "retrieved": [
+        [
+          "카카오 위치정보 이용약관",
+          6
+        ]
+      ],
+      "answer": "회사는 위치기반서비스의 이용을 제한하거나 중지할 때 다음과 같이 정보를 제공합니다:\n\n- 회사는 위치기반서비스의 전부 또는 일부를 변경·제한·중지할 수 있으며, 이때 사유 및 제한기간 등을 회사 홈페이지 등을 통해 사전 공지합니다.\n- 또한, 이용자의 서비스 이용을 제한하거나 중지할 때, 해당 사유와 제한 기간 등을 이용자에게 통지합니다."
+    },
+    {
+      "qid": "P05",
+      "retrieved": [
+        [
+          "카카오 위치정보 이용약관",
+          8
+        ]
+      ],
+      "answer": "법 제16조 제2항에 근거하여 기록·보존하며, 해당 자료는 6개월간 보관됩니다."
+    },
+    {
+      "qid": "P06",
+      "retrieved": [
+        [
+          "카카오 통합서비스약관",
+          4
+        ]
+      ],
+      "answer": "통합서비스에 가입하려면 먼저 카카오계정을 생성해야 합니다.\n통합서비스 이용계약은 동의 후 회사의 확인과 승낙을 거쳐 체결됩니다."
+    },
+    {
+      "qid": "P07",
+      "retrieved": [
+        [
+          "카카오 통합서비스약관",
+          1
+        ],
+        [
+          "카카오 통합 약관",
+          1
+        ]
+      ],
+      "answer": "서비스 명칭에 '카카오'가 사용되더라도 카카오 통합서비스약관의 '통합서비스'에 포함되지 않는 서비스는 ㈜카카오모빌리티가 제공하는 카카오 T 택시 서비스입니다.\n\n- 이 서비스는 카카오 계열사에서 제공하기 때문에 통합서비스에 포함되지 않습니다.\n- 통합서비스는 회사가 제공하는 1) “카카오” 브랜드를 사용하는 서비스(예:카카오톡) 또는 2) 카카오계정으로 이용하는 서비스(예: 브런치)를 의미합니다."
+    },
+    {
+      "qid": "P08",
+      "retrieved": [
+        [
+          "카카오 통합 약관",
+          3
+        ],
+        [
+          "카카오 통합서비스약관",
+          3
+        ]
+      ],
+      "answer": "충돌하는 내용이 있을 때 세부지침에 따라야 합니다."
+    },
+    {
+      "qid": "P09",
+      "retrieved": [
+        [
+          "카카오 통합 약관",
+          10
+        ]
+      ],
+      "answer": "회사에 부여된 라이선스는 이용자의 서비스 사용 중단 또는 카카오계정 및 Daum 아이디 탈퇴 이후에도 존속합니다. 하지만 일부 서비스에서는 게시물의 삭제나 접근 제한이 가능합니다. 따라서 게시물에 대한 라이선스는 탈퇴 시에도 유지되지만, 특정 서비스에서는 제한될 수 있습니다."
+    },
+    {
+      "qid": "P10",
+      "retrieved": [
+        [
+          "카카오 위치정보 이용약관",
+          12
+        ]
+      ],
+      "answer": "서면동의서에 보호의무자임을 증명하는 서면을 첨부하고 회사에 제출해야 합니다. \n동의는 동의하는 보호의무자에게는 본 약관 제9조에 의한 이용자의 모든 권리를 가지게 됩니다."
+    }
+  ],
+  "meta": {
+    "doc_name_violations": [],
+    "timeout_qids": [],
+    "env_warnings": [],
+    "transport": "http",
+    "performance": {
+      "version": 2,
+      "transport": "http",
+      "requests": 12,
+      "concurrency": 2,
+      "success": 12,
+      "fail": 0,
+      "success_rate": 1.0,
+      "throughput_rps": 0.1904,
+      "wall_s": 63.0394,
+      "p50_latency_s": 9.6082,
+      "p95_latency_s": 14.4762,
+      "errors": [],
+      "summary_method": "median",
+      "protocol": {
+        "requests_per_run": 12,
+        "concurrency": 2,
+        "warmup_requests": 2,
+        "repetitions": 3
+      },
+      "samples": [
+        {
+          "repetition": 1,
+          "transport": "http",
+          "requests": 12,
+          "concurrency": 2,
+          "success": 12,
+          "fail": 0,
+          "success_rate": 1.0,
+          "throughput_rps": 0.1904,
+          "wall_s": 63.0394,
+          "p50_latency_s": 10.1329,
+          "p95_latency_s": 14.4762,
+          "errors": []
+        },
+        {
+          "repetition": 2,
+          "transport": "http",
+          "requests": 12,
+          "concurrency": 2,
+          "success": 12,
+          "fail": 0,
+          "success_rate": 1.0,
+          "throughput_rps": 0.1887,
+          "wall_s": 63.6015,
+          "p50_latency_s": 9.6082,
+          "p95_latency_s": 16.1204,
+          "errors": []
+        },
+        {
+          "repetition": 3,
+          "transport": "http",
+          "requests": 12,
+          "concurrency": 2,
+          "success": 12,
+          "fail": 0,
+          "success_rate": 1.0,
+          "throughput_rps": 0.2004,
+          "wall_s": 59.8745,
+          "p50_latency_s": 8.8909,
+          "p95_latency_s": 12.2012,
+          "errors": []
+        }
+      ],
+      "warmup": {
+        "repetition": 0,
+        "transport": "http",
+        "requests": 2,
+        "concurrency": 2,
+        "success": 2,
+        "fail": 0,
+        "success_rate": 1.0,
+        "throughput_rps": 0.327,
+        "wall_s": 6.1171,
+        "p50_latency_s": 3.549,
+        "p95_latency_s": 3.549,
+        "errors": []
+      }
+    }
+  }
+}

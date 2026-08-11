@@ -1,0 +1,501 @@
+{
+  "team": "5",
+  "objective": {
+    "mrr": 0.6,
+    "keyfact_f1": 0.342,
+    "mrr_exact": 0.6,
+    "keyfact_f1_exact": 0.34198,
+    "per_question": [
+      {
+        "qid": "P01",
+        "rank": 1,
+        "mrr_contrib": 1.0,
+        "keyfact_recall": 1.0,
+        "keyfact_f1": 0.9697
+      },
+      {
+        "qid": "P02",
+        "rank": 1,
+        "mrr_contrib": 1.0,
+        "keyfact_recall": 0.5,
+        "keyfact_f1": 0.6286
+      },
+      {
+        "qid": "P03",
+        "rank": 1,
+        "mrr_contrib": 1.0,
+        "keyfact_recall": 0.2,
+        "keyfact_f1": 0.3409
+      },
+      {
+        "qid": "P04",
+        "rank": 1,
+        "mrr_contrib": 1.0,
+        "keyfact_recall": 0.0,
+        "keyfact_f1": 0.5806
+      },
+      {
+        "qid": "P05",
+        "rank": null,
+        "mrr_contrib": 0.0,
+        "keyfact_recall": 0.0,
+        "keyfact_f1": 0.0
+      },
+      {
+        "qid": "P06",
+        "rank": 1,
+        "mrr_contrib": 1.0,
+        "keyfact_recall": 0.0,
+        "keyfact_f1": 0.4
+      },
+      {
+        "qid": "P07",
+        "rank": 1,
+        "mrr_contrib": 1.0,
+        "keyfact_recall": 0.6667,
+        "keyfact_f1": 0.5
+      },
+      {
+        "qid": "P08",
+        "rank": null,
+        "mrr_contrib": 0.0,
+        "keyfact_recall": 0.0,
+        "keyfact_f1": 0.0
+      },
+      {
+        "qid": "P09",
+        "rank": null,
+        "mrr_contrib": 0.0,
+        "keyfact_recall": 0.0,
+        "keyfact_f1": 0.0
+      },
+      {
+        "qid": "P10",
+        "rank": null,
+        "mrr_contrib": 0.0,
+        "keyfact_recall": 0.0,
+        "keyfact_f1": 0.0
+      }
+    ]
+  },
+  "judges": {
+    "gemini": {
+      "per_question": [
+        {
+          "qid": "P01",
+          "axes": {
+            "accuracy": {
+              "score": 10,
+              "reason": "참가자의 답변은 레퍼런스 제10조 제2항의 내용과 정확히 일치하며, 어떠한 왜곡이나 환각도 포함되어 있지 않습니다."
+            },
+            "grounding": {
+              "score": 10,
+              "reason": "정답 조인 카카오계정 약관 제10조의 핵심 내용을 정확하게 인용하여 답변을 구성하였습니다."
+            },
+            "completeness": {
+              "score": 10,
+              "reason": "담당자 1인만 이용 가능하다는 점과 다른 사람에게 공유하는 것이 금지된다는 두 가지 핵심 키팩트를 모두 완벽하게 포함하고 있습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "불필요한 표현 없이 질문에 대해 명확하고 간결한 문장으로 답변하여 가독성이 매우 높습니다."
+            }
+          },
+          "total_0_100": 100.0,
+          "overall_comment": "참가자의 답변은 제공된 레퍼런스 및 키팩트와 완벽히 부합하며, 군더더기 없이 정확하고 명료하게 작성되었습니다."
+        },
+        {
+          "qid": "P02",
+          "axes": {
+            "accuracy": {
+              "score": 10,
+              "reason": "참가자 답변은 회사가 예측하거나 통제할 수 없는 사유로 서비스가 중단되었을 때 2시간 이상 복구가 지연되면 공지사항에 게시하여 알린다는 사실을 정확하게 기술하였습니다."
+            },
+            "grounding": {
+              "score": 10,
+              "reason": "제시된 카카오계정 약관 제8조, 카카오 통합서비스약관 제7조, 카카오 통합 약관 제13조의 내용에 정확히 근거하여 작성되었습니다."
+            },
+            "completeness": {
+              "score": 7,
+              "reason": "핵심 키팩트인 '2시간 이상 복구 지연 시 공지사항 게시'는 포함하였으나, 또 다른 키팩트인 '상황 파악 즉시 최대한 빠른 시일 내에 서비스를 복구하도록 노력한다'는 내용이 누락되었습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "질문에 대해 군더더기 없이 명확하고 가독성이 높은 문장으로 답변하였습니다."
+            }
+          },
+          "total_0_100": 94.0,
+          "overall_comment": "참가자 답변은 정확성과 근거성, 명료성 측면에서 매우 우수하나, 복구 노력에 관한 일부 키팩트가 누락되어 완결성에서 감점되었습니다."
+        },
+        {
+          "qid": "P03",
+          "axes": {
+            "accuracy": {
+              "score": 10,
+              "reason": "참가자 답변은 레퍼런스 약관 제7조 제1항에 명시된 5가지 카카오계정 서비스의 명칭을 정확하게 제시하였습니다."
+            },
+            "grounding": {
+              "score": 10,
+              "reason": "제시된 답변은 카카오계정 약관 제7조 제1항의 5가지 항목에 정확히 근거하고 있습니다."
+            },
+            "completeness": {
+              "score": 7,
+              "reason": "5가지 서비스의 명칭은 모두 포함하였으나, 각 서비스의 상세 정의 및 설명(키팩트 세부 내용)이 누락되어 완결성이 다소 아쉽습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "번호 매김 형식을 사용하여 5가지 서비스를 군더더기 없이 명확하고 가독성 높게 작성하였습니다."
+            }
+          },
+          "total_0_100": 94.0,
+          "overall_comment": "참가자는 약관 제7조 제1항에 열거된 5가지 서비스 명칭을 정확하게 나열하였으나, 각 항목의 상세 설명이 누락되어 완결성에서 일부 감점이 있었습니다."
+        },
+        {
+          "qid": "P04",
+          "axes": {
+            "accuracy": {
+              "score": 7,
+              "reason": "참가자 답변은 사전 공지 또는 통지한다는 방법론은 정확히 서술하였으나, 무엇을 알리는지에 해당하는 핵심 내용인 '그 사유 및 제한기간 등'을 누락하여 다소 모호합니다."
+            },
+            "grounding": {
+              "score": 10,
+              "reason": "정답 조인 제6조 제3항을 정확하게 명시하고 인용하였습니다."
+            },
+            "completeness": {
+              "score": 7,
+              "reason": "알리는 방법(홈페이지 사전 공지 또는 이용자 통지)은 포함하였으나, 알리는 대상인 '그 사유 및 제한기간 등'의 키팩트가 누락되었습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "문장이 간결하고 오탈자 없이 명확하게 작성되었습니다."
+            }
+          },
+          "total_0_100": 82.0,
+          "overall_comment": "참가자는 정확한 근거 조항을 바탕으로 알리는 방법을 명확히 설명하였으나, 질문에서 요구한 '무엇을(사유 및 제한기간 등)'에 해당하는 핵심 키팩트를 누락하여 완결성과 정확성에서 감점이 발생했습니다."
+        },
+        {
+          "qid": "P05",
+          "axes": {
+            "accuracy": {
+              "score": 0,
+              "reason": "제공된 레퍼런스(제8조)에 질문에 대한 명확한 답변이 존재함에도 불구하고 확인되지 않는다고 답변하여 사실과 다릅니다."
+            },
+            "grounding": {
+              "score": 0,
+              "reason": "정답 조인 제8조를 전혀 인용하지 못하였으며 근거를 제시하지 않았습니다."
+            },
+            "completeness": {
+              "score": 0,
+              "reason": "법률 조항(제16조 제2항), 보관 장소(위치정보시스템), 보관 기간(6개월) 등 모든 정답 키팩트를 누락하였습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "확인되지 않는다는 문장 자체는 오탈자 없이 간결하고 명확하게 작성되었습니다."
+            }
+          },
+          "total_0_100": 15.0,
+          "overall_comment": "레퍼런스에 명확히 기재된 정보를 찾지 못하고 확인되지 않는다고 회피하여 정확성, 근거성, 완결성에서 최하점을 받았습니다."
+        },
+        {
+          "qid": "P06",
+          "axes": {
+            "accuracy": {
+              "score": 10,
+              "reason": "참가자의 답변은 레퍼런스에 명시된 사실과 완벽하게 일치하며, 어떠한 왜곡이나 환각도 포함되어 있지 않습니다."
+            },
+            "grounding": {
+              "score": 7,
+              "reason": "답변의 내용은 제4조의 규정에 명확히 근거하고 있으나, 구체적인 조항 번호(제4조)를 직접적으로 명시하거나 인용하지는 않았습니다."
+            },
+            "completeness": {
+              "score": 10,
+              "reason": "카카오계정 우선 생성 필요성과 동의, 확인, 승낙 순서의 계약 체결 과정이라는 두 가지 핵심 키팩트를 모두 완벽하게 포함하고 있습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "질문에 대해 군더더기 없이 명확하고 간결한 문장 구조로 답변하여 가독성이 매우 높습니다."
+            }
+          },
+          "total_0_100": 92.5,
+          "overall_comment": "참가자는 제공된 레퍼런스를 바탕으로 질문에 필요한 핵심 정보를 정확하고 명료하게 전달하였습니다. 조항 번호 인용이 누락된 점을 제외하면 모든 평가 항목에서 매우 우수한 답변입니다."
+        },
+        {
+          "qid": "P07",
+          "axes": {
+            "accuracy": {
+              "score": 10,
+              "reason": "참가자의 답변은 레퍼런스에 명시된 사실과 완벽하게 일치하며, 어떠한 왜곡이나 환각도 포함되어 있지 않습니다."
+            },
+            "grounding": {
+              "score": 10,
+              "reason": "제시된 답변은 카카오 통합서비스약관 제1조(목적 및 정의)의 내용을 정확하게 인용하고 이에 명확히 근거하고 있습니다."
+            },
+            "completeness": {
+              "score": 7,
+              "reason": "핵심 키팩트인 '카카오 계열사 제공 서비스'와 '카카오 T 택시 서비스 예시'는 정확히 포함하였으나, '계열사를 포함한 제3자가 제공하는 서비스에 가입되지 않는다'는 세부 키팩트는 누락되었습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "질문에서 요구한 두 가지 질문(제공 주체, 예시)에 대해 군더더기 없이 명확하고 가독성이 높은 문장으로 답변하였습니다."
+            }
+          },
+          "total_0_100": 94.0,
+          "overall_comment": "참가자의 답변은 정확성과 근거성, 명료성 면에서 매우 우수하며, 핵심 키팩트를 잘 짚어내었으나 세부적인 키팩트 하나가 누락되어 완결성에서 약간의 감점이 있었습니다."
+        },
+        {
+          "qid": "P08",
+          "axes": {
+            "accuracy": {
+              "score": 0,
+              "reason": "제공된 레퍼런스 제3조에 충돌 시 세부지침에 따른다는 명확한 규정이 존재함에도 불구하고, 확인되지 않는다고 답변하여 사실과 다릅니다."
+            },
+            "grounding": {
+              "score": 0,
+              "reason": "정답 조인 제3조의 내용을 전혀 인용하지 못하였으며 근거를 제시하지 않았습니다."
+            },
+            "completeness": {
+              "score": 0,
+              "reason": "충돌 시 세부지침이 우선한다는 핵심 키팩트와 약관 외 준칙에 대한 내용을 전혀 포함하지 못했습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "확인되지 않는다는 문장 자체는 오탈자 없이 명료하게 작성되었습니다."
+            }
+          },
+          "total_0_100": 15.0,
+          "overall_comment": "레퍼런스 제3조에 질문에 대한 명확한 답이 존재함에도 불구하고, 확인되지 않는다고 답변하여 정확성, 근거성, 완결성에서 모두 최하점을 받았습니다."
+        },
+        {
+          "qid": "P09",
+          "axes": {
+            "accuracy": {
+              "score": 0,
+              "reason": "제공된 카카오 통합 약관 제10조 제2항에 해당 내용이 명확히 존재함에도 불구하고 확인되지 않는다고 답변하여 사실과 다릅니다."
+            },
+            "grounding": {
+              "score": 0,
+              "reason": "정답 조인 제10조를 전혀 인용하지 못하고 확인되지 않는다고 회피하였습니다."
+            },
+            "completeness": {
+              "score": 0,
+              "reason": "탈퇴 후에도 라이선스가 존속한다는 점과 영구적 라이선스라는 핵심 키팩트가 모두 누락되었습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "확인되지 않는다는 문장 자체는 오탈자 없이 명료하게 작성되었습니다."
+            }
+          },
+          "total_0_100": 15.0,
+          "overall_comment": "제시된 약관 제10조 제2항에 질문에 대한 명확한 답이 존재함에도 불구하고, 확인되지 않는다고 답변하여 정확성, 근거성, 완결성에서 모두 최하점을 받았습니다."
+        },
+        {
+          "qid": "P10",
+          "axes": {
+            "accuracy": {
+              "score": 0,
+              "reason": "제공된 레퍼런스(제12조)에 질문에 대한 명확한 답변이 존재함에도 불구하고 확인되지 않는다고 회피하였습니다."
+            },
+            "grounding": {
+              "score": 0,
+              "reason": "정답 조인 제12조의 내용을 전혀 인용하지 못하였으며 근거를 제시하지 않았습니다."
+            },
+            "completeness": {
+              "score": 0,
+              "reason": "서면동의서 제출, 본인 동의 간주 효력, 이용자 권리 보유 등 정답 키팩트를 전혀 포함하지 못했습니다."
+            },
+            "clarity": {
+              "score": 10,
+              "reason": "확인되지 않는다는 의사를 군더더기 없이 명확하고 깔끔한 한국어 문장으로 표현하였습니다."
+            }
+          },
+          "total_0_100": 15.0,
+          "overall_comment": "참가자는 레퍼런스에 명확히 존재하는 규정을 찾지 못하고 확인되지 않는다고 답변하여 정확성, 근거성, 완결성에서 모두 최하점을 받았습니다."
+        }
+      ],
+      "score_0_100": 61.65,
+      "score_exact": 61.65,
+      "n_scored": 10,
+      "n_failed": 0
+    }
+  },
+  "panel": {
+    "per_question": [
+      {
+        "qid": "P01",
+        "axes_median": {
+          "accuracy": 10.0,
+          "grounding": 10.0,
+          "completeness": 10.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 100.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P02",
+        "axes_median": {
+          "accuracy": 10.0,
+          "grounding": 10.0,
+          "completeness": 7.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 94.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P03",
+        "axes_median": {
+          "accuracy": 10.0,
+          "grounding": 10.0,
+          "completeness": 7.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 94.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P04",
+        "axes_median": {
+          "accuracy": 7.0,
+          "grounding": 10.0,
+          "completeness": 7.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 82.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P05",
+        "axes_median": {
+          "accuracy": 0.0,
+          "grounding": 0.0,
+          "completeness": 0.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 15.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P06",
+        "axes_median": {
+          "accuracy": 10.0,
+          "grounding": 7.0,
+          "completeness": 10.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 92.5,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P07",
+        "axes_median": {
+          "accuracy": 10.0,
+          "grounding": 10.0,
+          "completeness": 7.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 94.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P08",
+        "axes_median": {
+          "accuracy": 0.0,
+          "grounding": 0.0,
+          "completeness": 0.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 15.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P09",
+        "axes_median": {
+          "accuracy": 0.0,
+          "grounding": 0.0,
+          "completeness": 0.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 15.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      },
+      {
+        "qid": "P10",
+        "axes_median": {
+          "accuracy": 0.0,
+          "grounding": 0.0,
+          "completeness": 0.0,
+          "clarity": 10.0
+        },
+        "judge_total_0_100": 15.0,
+        "disagreement": false,
+        "spread": 0.0,
+        "n_judges_ok": 1
+      }
+    ],
+    "judge_score_0_100": 61.65,
+    "judge_score_exact": 61.65,
+    "n_questions": 10,
+    "n_scored": 10,
+    "n_failed": 0,
+    "failed_qids": [],
+    "min_judges": 1,
+    "judges_requested": [
+      "gemini"
+    ],
+    "judges_scored": [
+      "gemini"
+    ],
+    "judges_absent": [],
+    "judges_partial": [],
+    "judges_coverage": {
+      "gemini": [
+        10,
+        10
+      ]
+    },
+    "judges_absent_reasons": {},
+    "n_judges_requested": 1,
+    "n_judges_scored": 1,
+    "judge_degraded": false
+  },
+  "quality_score_0_100": 53.084,
+  "performance": {
+    "status": "disabled",
+    "score_0_100": null
+  },
+  "performance_score_0_100": null,
+  "total_0_100": 53.084,
+  "meta": {
+    "weights": {
+      "mrr": 0.2,
+      "keyfact": 0.3,
+      "judge": 0.5
+    },
+    "judges_run": [
+      "gemini"
+    ],
+    "n_questions": 10,
+    "judge_status": "ok",
+    "n_judges_requested": 1,
+    "n_judges_scored": 1
+  }
+}

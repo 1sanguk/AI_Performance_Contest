@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "name": "팀10 자체 합성 검증 세트",
+    "목적": "공개 10문항이 다루지 않는 60개 조항에서 검색 순위(MRR)와 생성 파손 여부를 점검한다.",
+    "작성방식": "조항 원문을 읽고 사람이 질문을 작성했으며, BM25가 유리해지지 않도록 원문 어휘를 그대로 쓰지 않고 바꿔 표현했다.",
+    "주의": "정답 라벨은 작성자가 원문에서 직접 확인한 것이며 운영진 골드셋이 아니다. 점수 절대값이 아니라 회귀·파손 탐지에 사용한다.",
+    "tag": {
+      "confuse": "제목이 여러 문서에 중복되어 문서 선택이 어려운 문항",
+      "plain": "해당 조항에만 있는 구별되는 사실을 묻는 문항",
+      "named": "질문에 문서명을 명시한 문항"
+    }
+  },
+  "questions": [
+    {"id": "S01", "tag": "confuse", "question": "카카오계정에서 탈퇴하면 통합서비스를 쓰기 위해 맺은 계약은 따로 해지 신청을 해야 하나요?", "gold_articles": [{"doc": "카카오 통합서비스약관", "article": 13}]},
+    {"id": "S02", "tag": "confuse", "question": "오랫동안 한 번도 접속한 적이 없는 계정에 대해 회사는 통지 후 그 정보를 없애거나 따로 떼어 보관할 수 있나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 15}]},
+    {"id": "S03", "tag": "plain", "question": "위치정보 관련 서비스를 쓸 때 돈을 내야 하나요? 무선 통신에서 생기는 요금은 누가 부담하나요?", "gold_articles": [{"doc": "카카오 위치정보 이용약관", "article": 5}]},
+    {"id": "S04", "tag": "plain", "question": "위치를 활용한 서비스의 제공 목적이 끝나면 모아둔 위치 자료는 얼마나 빨리 없애나요?", "gold_articles": [{"doc": "카카오 위치정보 이용약관", "article": 9}]},
+    {"id": "S05", "tag": "plain", "question": "쓰던 사람이 위치 활용에 대한 허락을 도로 거두면 회사는 그 범위의 자료를 어떻게 처리하나요?", "gold_articles": [{"doc": "카카오 위치정보 이용약관", "article": 10}]},
+    {"id": "S06", "tag": "plain", "question": "만 14세가 안 된 사람의 위치를 남에게 넘기려면 누구누구에게 허락을 받아야 하나요?", "gold_articles": [{"doc": "카카오 위치정보 이용약관", "article": 11}]},
+    {"id": "S07", "tag": "plain", "question": "태풍이나 지진 같은 불가항력 때문에 위치 기반 기능을 못 쓰게 되면 회사가 손해를 물어주나요?", "gold_articles": [{"doc": "카카오 위치정보 이용약관", "article": 14}]},
+    {"id": "S08", "tag": "confuse", "question": "카카오계정 약관을 고칠 때 시행 며칠 전에 미리 알려 주는 것을 원칙으로 하나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 2}]},
+    {"id": "S09", "tag": "named", "question": "카카오계정 약관에서 이용자 전체를 향한 공지는 며칠 이상 올려두어야 효력이 생기나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 14}]},
+    {"id": "S10", "tag": "confuse", "question": "나이가 만 14세에 못 미치는 사람이 통합서비스에 들어오려면 어떤 조건이 갖춰져야 하나요?", "gold_articles": [{"doc": "카카오 통합서비스약관", "article": 5}]},
+    {"id": "S11", "tag": "confuse", "question": "만 14세가 되지 않은 사람이 카카오계정을 새로 만들려면 무엇이 있어야 하나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 6}]},
+    {"id": "S12", "tag": "plain", "question": "위치 문제로 다툼이 생겼는데 서로 이야기해서 풀리지 않으면 어느 기관에 조정이나 재정을 넣을 수 있나요?", "gold_articles": [{"doc": "카카오 위치정보 이용약관", "article": 15}]},
+    {"id": "S13", "tag": "plain", "question": "남이 올린 글이 저작권을 침해했을 때 권리를 가진 사람은 회사에 무엇을 해달라고 할 수 있나요?", "gold_articles": [{"doc": "카카오 통합서비스약관", "article": 8}]},
+    {"id": "S14", "tag": "plain", "question": "통합서비스에 들어와도 개별 기능을 쓰려면 따로 동의하거나 인증을 더 거쳐야 하는 경우가 있나요?", "gold_articles": [{"doc": "카카오 통합서비스약관", "article": 6}]},
+    {"id": "S15", "tag": "plain", "question": "전자서명이나 인증서를 쓰는 기능에서 전자서명은 무엇을 뜻하나요?", "gold_articles": [{"doc": "카카오 통합 약관", "article": 17}]},
+    {"id": "S16", "tag": "plain", "question": "단말기 위치를 받아 제공하는 기능은 돈을 받나요, 아니면 공짜인가요?", "gold_articles": [{"doc": "카카오 통합 약관", "article": 16}]},
+    {"id": "S17", "tag": "plain", "question": "본인이 신청하지 않았는데도 디지털 형태의 카드가 만들어지는 경우가 있나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 11}]},
+    {"id": "S18", "tag": "plain", "question": "카카오계정 약관은 '회원'을 어떤 사람으로 규정하고 있나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 4}]},
+    {"id": "S19", "tag": "confuse", "question": "다른 사람 이름이나 이메일을 빌려 아이디를 만들려 한 경우 회사가 만들어 주기를 거절할 수 있나요?", "gold_articles": [{"doc": "카카오 통합 약관", "article": 5}]},
+    {"id": "S20", "tag": "named", "question": "카카오 통합서비스약관에서 청소년을 지키기 위한 방침의 자세한 내용은 어디서 볼 수 있나요?", "gold_articles": [{"doc": "카카오 통합서비스약관", "article": 16}]},
+    {"id": "S21", "tag": "named", "question": "카카오 통합 약관에서 돈을 내고 쓰는 기능은 대금을 언제 내는 것이 원칙인가요?", "gold_articles": [{"doc": "카카오 통합 약관", "article": 11}]},
+    {"id": "S22", "tag": "named", "question": "카카오계정 약관에서 서로 협의해도 다툼이 안 풀리면 어디에 소송을 낼 수 있나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 17}]},
+    {"id": "S23", "tag": "confuse", "question": "아이디와 비밀번호는 본인만 써야 하며 남에게 쓰게 해서는 안 된다고 정한 곳은 카카오 통합 약관의 어느 조항인가요?", "gold_articles": [{"doc": "카카오 통합 약관", "article": 6}]},
+    {"id": "S24", "tag": "plain", "question": "장비를 손보기 위해 잠시 기능을 멈출 때 회사는 어떻게 알리나요?", "gold_articles": [{"doc": "카카오 통합 약관", "article": 13}]},
+    {"id": "S25", "tag": "plain", "question": "위치를 바탕으로 길을 찾아 주거나 이동 수단을 추천하는 것은 어떤 종류의 기능으로 분류되나요?", "gold_articles": [{"doc": "카카오 위치정보 이용약관", "article": 4}]},
+    {"id": "S26", "tag": "confuse", "question": "회사가 이용자의 개인정보를 제3자에게 넘기지 않는다고 카카오계정 약관은 어떻게 밝히고 있나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 13}]},
+    {"id": "S27", "tag": "plain", "question": "카카오톡 이모티콘처럼 일부 기능에만 돈을 받는다는 설명이 통합서비스약관에는 어떻게 적혀 있나요?", "gold_articles": [{"doc": "카카오 통합서비스약관", "article": 10}]},
+    {"id": "S28", "tag": "plain", "question": "회사가 게시된 정보의 정확성이나 신뢰도를 보증하지 않는다고 카카오계정 약관은 어떻게 정하고 있나요?", "gold_articles": [{"doc": "카카오계정 약관", "article": 16}]},
+    {"id": "S29", "tag": "plain", "question": "카카오계정과 Daum 아이디는 각각 무엇을 뜻하며 어떤 절차로 만들어지나요?", "gold_articles": [{"doc": "카카오 통합 약관", "article": 4}]},
+    {"id": "S30", "tag": "confuse", "question": "중대한 영향을 주는 사항은 등록된 이메일 주소로 알린다고 통합서비스약관은 어떻게 정하고 있나요?", "gold_articles": [{"doc": "카카오 통합서비스약관", "article": 17}]}
+  ]
+}

@@ -2,27 +2,27 @@
   "results": [
     {
       "blind_id": "BLIND01",
-      "total": 96.4405664340978,
+      "total": 85.2148446165821,
       "status": "completed"
     },
     {
       "blind_id": "BLIND02",
-      "total": 98.62282722847563,
+      "total": 82.97174171318737,
       "status": "completed"
     },
     {
       "blind_id": "BLIND03",
-      "total": 100.0,
+      "total": 88.08987594415588,
       "status": "completed"
     },
     {
       "blind_id": "BLIND04",
-      "total": 93.1813441208188,
+      "total": 85.69315922720205,
       "status": "completed"
     },
     {
       "blind_id": "BLIND05",
-      "total": 93.45314117117567,
+      "total": 79.0463728710306,
       "status": "completed"
     }
   ]
